@@ -1,0 +1,40 @@
+// Icons
+.icon {
+  height: auto;
+  width: auto;
+  font-family: var(--ff-icons);
+  vertical-align: middle;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+  margin-right: var(--xs);
+
+  &--s { font-size: var(--s); line-height: var(--s); }
+  &--m { font-size: var(--m); line-height: var(--m);}
+  &--l { font-size: var(--l); line-height: var(--l);}
+  &--xl { font-size: var(--xl); line-height: var(--xl);}
+
+  &.md-dark { color: var(--lightest); }
+  &.md-light { color: var(--darkest); }
+
+
+  &--inline{
+    margin-right: 0.4em;
+    font-size: var(--m);
+  }
+
+  &:before {
+    content: attr(data-icon);
+  }
+
+}

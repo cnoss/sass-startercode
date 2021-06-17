@@ -1,215 +1,177 @@
-@charset "UTF-8";
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+/* Based on https://piccalil.li/blog/a-modern-css-reset/ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0; }
 
-body {
-  line-height: 1; }
-
-ol, ul {
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
   list-style: none; }
 
-blockquote, q {
-  quotes: none; }
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth; }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5; }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto; }
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block; }
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit; }
 
 @font-face {
-  font-family: Merri;
+  font-family: IBMPlexSans;
   font-style: normal;
   font-weight: 300;
-  src: url(../assets/fonts/Merriweather/Merriweather-Light.ttf); }
+  font-display: swap;
+  src: url("../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Light.ttf") format("truetype"), url("../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Light.woff2") format("woff2"); }
 
 @font-face {
-  font-family: Merri;
+  font-family: IBMPlexSans;
   font-style: normal;
   font-weight: 400;
-  src: url(../assets/fonts/Merriweather/Merriweather-Regular.ttf); }
+  font-display: swap;
+  src: url("../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf") format("truetype"), url("../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Regular.woff2") format("woff2"); }
 
 @font-face {
-  font-family: Merri;
-  font-style: normal;
-  font-weight: 600;
-  src: url(../assets/fonts/Merriweather/Merriweather-Bold.ttf); }
-
-@font-face {
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: 300;
-  src: url(../assets/fonts/Raleway/Raleway-Light.ttf); }
-
-@font-face {
-  font-family: Raleway;
+  font-family: IBMPlexSans;
   font-style: normal;
   font-weight: 500;
-  src: url(../assets/fonts/Raleway/Raleway-Medium.ttf); }
+  font-display: swap;
+  src: url("../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Medium.ttf") format("truetype"), url("../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Medium.woff2") format("woff2"); }
 
 @font-face {
-  font-family: Raleway;
+  font-family: IBMPlexSans;
   font-style: normal;
-  font-weight: 600;
-  src: url(../assets/fonts/Raleway/Raleway-Bold.ttf); }
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf") format("truetype"), url("../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Bold.woff2") format("woff2"); }
 
 @font-face {
-  font-family: PTsans;
+  font-family: MaterialIcons;
   font-style: normal;
-  font-weight: 300;
-  src: url(../assets/fonts/PT_Sans/PTSans-Regular.ttf); }
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.eot");
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.woff2") format("woff2"), url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.woff") format("woff"), url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.ttf") format("truetype"); }
 
-@font-face {
-  font-family: PTsans;
+:root {
+  --bfs:  0.5rem;
+  --xxs:  calc(var(--bfs) * 1.00);
+  --xs:   calc(var(--bfs) * 1.25);
+  --s:    calc(var(--bfs) * 1.60);
+  --m:    calc(var(--bfs) * 2.00);
+  --l:    calc(var(--bfs) * 2.50);
+  --xl:   calc(var(--bfs) * 3.15);
+  --xxl:   calc(var(--bfs) * 4.00);
+  --xxxl:   calc(var(--bfs) * 5.00);
+  --xxxxl:   calc(var(--bfs) * 6.30);
+  --light: #ccc;
+  --lighter: #eee;
+  --lightest: #fff;
+  --dark: #888;
+  --darker: #111;
+  --darkest: #000;
+  --darken: rgba(0,0,0,0.2);
+  --color-text: var(--darker);
+  --color-headline: var(--dark);
+  --color-accent: rgb(254,196,87);
+  --ff-normal: IBMPlexSans, sans-serif;
+  --ff-icons: MaterialIcons;
+  --fw-normal: 300;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --lh-normal: 140%;
+  --lh-tight: 110%;
+  --lh-loose: 150%;
+  --tr-fast: 0.3s;
+  --shadow-l: 0 0 10px rgba(0,0,0,0.5);
+  --border-width-s: 1px;
+  --border-width-m: 3px; }
+
+.icon {
+  height: auto;
+  width: auto;
+  font-family: var(--ff-icons);
+  vertical-align: middle;
+  font-weight: normal;
   font-style: normal;
-  font-weight: 600;
-  src: url(../assets/fonts/PT_Sans/PTSans-Bold.ttf); }
+  display: inline-block;
+  line-height: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+  margin-right: var(--xs); }
+  .icon--s {
+    font-size: var(--s);
+    line-height: var(--s); }
+  .icon--m {
+    font-size: var(--m);
+    line-height: var(--m); }
+  .icon--l {
+    font-size: var(--l);
+    line-height: var(--l); }
+  .icon--xl {
+    font-size: var(--xl);
+    line-height: var(--xl); }
+  .icon.md-dark {
+    color: var(--lightest); }
+  .icon.md-light {
+    color: var(--darkest); }
+  .icon--inline {
+    margin-right: 0.4em;
+    font-size: var(--m); }
+  .icon:before {
+    content: attr(data-icon); }
 
-@font-face {
-  font-family: PTserif;
-  font-style: normal;
-  font-weight: 300;
-  src: url(../assets/fonts/PT_Serif/PTSerif-Regular.ttf); }
-
-@font-face {
-  font-family: PTserif;
-  font-style: normal;
-  font-weight: 600;
-  src: url(../assets/fonts/PT_Serif/PTSerif-Bold.ttf); }
-
-/* Sizes
-Using Lucas Numbers 1, 3, 4, 7, 11, 18, 29, 47, 76, 
----------------------------------------------------------------------------- */
-/* Font Properties
----------------------------------------------------------------------------- */
-/* Font Weights
----------------------------------------------------------------------------- */
-/* Line Heights
----------------------------------------------------------------------------- */
-/* Colors
----------------------------------------------------------------------------- */
-/* Functional Properties
----------------------------------------------------------------------------- */
-/* Viewports
----------------------------------------------------------------------------- */
-/* Transitions
----------------------------------------------------------------------------- */
-/* Misc
----------------------------------------------------------------------------- */
 * {
   box-sizing: border-box; }
 
-html, body {
-  font-family: PTsans;
-  font-size: 18px;
-  line-height: 130%;
-  font-weight: 400;
-  hyphens: auto;
-  color: #666; }
+body {
+  padding: var(--xl);
+  font-family: var(--ff-normal);
+  color: var(--text-color);
+  line-height: var(--lh-normal); }
 
-img {
-  width: 100%;
-  height: auto; }
-
-h1, h2, h3, h4, p, blockquote {
-  margin-bottom: 29px; }
-
-blockquote {
-  font-family: PTserif;
-  color: #000; }
-
-blockquote:before {
-  content: "«";
-  padding-right: 0.1em; }
-
-blockquote:after {
-  content: "»";
-  padding-left: 0.1em; }
-
-h1, h2, h3, h4 {
-  line-height: 100%;
-  font-weight: 600;
-  color: #000; }
-
-h1 {
-  font-size: 47px; }
-
-h2 {
-  font-size: 29px; }
-
-h3 {
-  font-size: 18px; }
-
-section {
-  margin-bottom: 29px; }
-
-.marginalie {
-  font-family: PTserif;
-  padding-left: 18px;
-  color: #f09e05;
-  border-left: solid 2px #f09e05; }
-  .marginalie--image {
-    border: none; }
-  @media only screen and (min-width: 50rem) {
-    .marginalie {
-      padding-right: 18px;
-      width: 26rem;
-      float: left;
-      margin-left: -26rem;
-      margin-bottom: 0;
-      text-align: right;
-      border-left: none; } }
-
-.main-header {
-  background-image: url(../images/NGC_2818_by_the_Hubble_Space_Telescope.jpg);
-  padding: 18px;
-  height: 100vh;
-  background-size: cover;
-  background-position: center center;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .main-header__headline {
-    color: #fff;
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.9); }
-
-.main-content {
-  padding: 18px;
-  max-width: 50rem;
-  background-color: #fff;
-  color: #666;
-  transition: margin 0.8s; }
-  @media only screen and (min-width: 50rem) {
-    .main-content {
-      margin-left: 26rem; } }
+h1, h2, h3 {
+  margin-bottom: var(--m); }
 
 /*# sourceMappingURL=main.css.map */
