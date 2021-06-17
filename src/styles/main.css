@@ -169,7 +169,8 @@ body {
   padding: var(--xl);
   font-family: var(--ff-normal);
   color: var(--text-color);
-  line-height: var(--lh-normal); }
+  line-height: var(--lh-normal);
+  background-color: green; }
 
 h1, h2, h3 {
   margin-bottom: var(--m); }
